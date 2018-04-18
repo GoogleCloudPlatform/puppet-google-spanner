@@ -85,10 +85,10 @@ puppet-codegen:
 
   * .gitignore
   * .rubocop.yml
-  * .tests/end2end/data/database.pp
-  * .tests/end2end/data/delete_instance.pp
-  * .tests/end2end/data/instance.pp
-  * .tests/end2end/data/instance_config.pp
+  * .tools/end2end/data/database.pp
+  * .tools/end2end/data/delete_instance.pp
+  * .tools/end2end/data/instance.pp
+  * .tools/end2end/data/instance_config.pp
   * CHANGELOG.md
   * CONTRIBUTING.md
   * examples/database.pp
@@ -167,7 +167,7 @@ puppet-codegen:
 The list below contains all the files that were automatically sourced from a
 central location:
 
-  * .tests/README.md
+  * .tools/README.md
   * Gemfile.lock
   * LICENSE
   * spec/data/poor_example.pp
