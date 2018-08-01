@@ -31,8 +31,8 @@ require 'puppet'
 
 Puppet::Type.newtype(:gspanner_instance_config) do
   @doc = <<-DOC
-    A possible configuration for a Cloud Spanner instance. Configurations
-    define the geographic placement of nodes and their replication.
+    A possible configuration for a Cloud Spanner instance. Configurations define the geographic
+    placement of nodes and their replication.
   DOC
 
   autorequire(:gauth_credential) do
@@ -59,16 +59,13 @@ Puppet::Type.newtype(:gspanner_instance_config) do
 
   newproperty(:name, parent: Google::Spanner::Property::String) do
     desc <<-DOC
-      A unique identifier for the instance configuration. Values are of the
-      form projects/<project>/instanceConfigs/[a-z][-a-z0-9]*
+      A unique identifier for the instance configuration. Values are of the form
+      projects/<project>/instanceConfigs/[a-z][-a-z0-9]*
     DOC
   end
 
   newproperty(:display_name, parent: Google::Spanner::Property::String) do
-    desc <<-DOC
-      The name of this instance configuration as it appears in UIs. (output
-      only)
-    DOC
+    desc 'The name of this instance configuration as it appears in UIs. (output only)'
   end
 
   # Returns all properties that a provider can export to other resources

@@ -69,11 +69,10 @@ module Google
         end
 
         def resource
-          Google::ObjectStore.instance[:gspanner_instance_config]
-                             .each do |entry|
+          Google::ObjectStore.instance[:gspanner_instance_config].each do |entry|
             return entry.exports[:name] if entry.title == @title
           end
-          raise ArgumentError, "gspanner_instance_config[#{@title}] required"
+          @title
         end
       end
 
