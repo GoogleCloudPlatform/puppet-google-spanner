@@ -135,10 +135,7 @@ describe Puppet::Type.type(:gspanner_instance).provider(:google) do
               # it 'config' do
               #   # Add test code here
               # end
-              it do
-                is_expected
-                  .to have_attributes(display_name: 'test display_name#0 data')
-              end
+              it { is_expected.to have_attributes(display_name: 'test display_name#0 data') }
               it { is_expected.to have_attributes(node_count: 2_502_187_088) }
               # TODO(nelsonjr): Implement complex namevalues property test.
               # it 'labels' do
@@ -156,10 +153,7 @@ describe Puppet::Type.type(:gspanner_instance).provider(:google) do
               # it 'config' do
               #   # Add test code here
               # end
-              it do
-                is_expected
-                  .to have_attributes(display_name: 'test display_name#1 data')
-              end
+              it { is_expected.to have_attributes(display_name: 'test display_name#1 data') }
               it { is_expected.to have_attributes(node_count: 5_004_374_177) }
               # TODO(nelsonjr): Implement complex namevalues property test.
               # it 'labels' do
@@ -177,10 +171,7 @@ describe Puppet::Type.type(:gspanner_instance).provider(:google) do
               # it 'config' do
               #   # Add test code here
               # end
-              it do
-                is_expected
-                  .to have_attributes(display_name: 'test display_name#2 data')
-              end
+              it { is_expected.to have_attributes(display_name: 'test display_name#2 data') }
               it { is_expected.to have_attributes(node_count: 7_506_561_265) }
               # TODO(nelsonjr): Implement complex namevalues property test.
               # it 'labels' do
@@ -292,10 +283,7 @@ describe Puppet::Type.type(:gspanner_instance).provider(:google) do
               # it 'config' do
               #   # Add test code here
               # end
-              it do
-                is_expected
-                  .to have_attributes(display_name: 'test display_name#0 data')
-              end
+              it { is_expected.to have_attributes(display_name: 'test display_name#0 data') }
               it { is_expected.to have_attributes(node_count: 2_502_187_088) }
               # TODO(nelsonjr): Implement complex namevalues property test.
               # it 'labels' do
@@ -313,10 +301,7 @@ describe Puppet::Type.type(:gspanner_instance).provider(:google) do
               # it 'config' do
               #   # Add test code here
               # end
-              it do
-                is_expected
-                  .to have_attributes(display_name: 'test display_name#1 data')
-              end
+              it { is_expected.to have_attributes(display_name: 'test display_name#1 data') }
               it { is_expected.to have_attributes(node_count: 5_004_374_177) }
               # TODO(nelsonjr): Implement complex namevalues property test.
               # it 'labels' do
@@ -334,10 +319,7 @@ describe Puppet::Type.type(:gspanner_instance).provider(:google) do
               # it 'config' do
               #   # Add test code here
               # end
-              it do
-                is_expected
-                  .to have_attributes(display_name: 'test display_name#2 data')
-              end
+              it { is_expected.to have_attributes(display_name: 'test display_name#2 data') }
               it { is_expected.to have_attributes(node_count: 7_506_561_265) }
               # TODO(nelsonjr): Implement complex namevalues property test.
               # it 'labels' do
@@ -685,25 +667,6 @@ describe Puppet::Type.type(:gspanner_instance).provider(:google) do
         before { subject.instance_variable_set(:@deleted, true) }
         it { expect { subject.flush }.not_to raise_error }
       end
-    end
-  end
-
-  context '#exports' do
-    context 'exports all properties' do
-      let(:resource1) { create_type 1 }
-      before do
-        expect_network_get_success 1
-        described_class.prefetch(title0: resource1)
-      end
-
-      subject { resource1.exports }
-
-      let(:expected_results) do
-        {
-          name: 'test name#0 data'
-        }
-      end
-      it { is_expected.to eq(expected_results) }
     end
   end
 

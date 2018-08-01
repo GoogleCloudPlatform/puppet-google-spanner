@@ -27,9 +27,7 @@
 
 require 'google/hash_utils'
 require 'google/object_store'
-require 'google/spanner/network/delete'
 require 'google/spanner/network/get'
-require 'google/spanner/network/post'
 require 'google/spanner/network/put'
 require 'google/spanner/property/string'
 require 'puppet'
@@ -46,6 +44,11 @@ Puppet::Type.type(:gspanner_instance_config).provide(:google) do
   end
 
   def self.prefetch(resources)
+    Puppet.warning [
+      "gspanner_instance_config will be deprecated in a future release.",
+      "You can use strings to reference GCP InstanceConfig.",
+      "A gspanner_instance_config is no longer necessary"
+    ].join(" ")
     debug('prefetch')
     resources.each do |name, resource|
       project = resource[:project]
@@ -66,8 +69,7 @@ Puppet::Type.type(:gspanner_instance_config).provide(:google) do
   def self.fetch_to_hash(fetch)
     {
       name: Google::Spanner::Property::String.api_munge(fetch['name']),
-      display_name:
-        Google::Spanner::Property::String.api_munge(fetch['displayName'])
+      display_name: Google::Spanner::Property::String.api_munge(fetch['displayName'])
     }.reject { |_, v| v.nil? }
   end
 
@@ -92,7 +94,8 @@ Puppet::Type.type(:gspanner_instance_config).provide(:google) do
 
   def exports
     {
-      name: @fetched['name']
+      name: @fetched['name'],
+      project: resource[:project]
     }
   end
 

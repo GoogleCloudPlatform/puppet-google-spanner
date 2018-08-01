@@ -64,25 +64,22 @@ Puppet::Type.newtype(:gspanner_database) do
   end
 
   newparam(:instance, parent: Google::Spanner::Property::InstancNameRef) do
-    desc 'A reference to Instance resource'
+    desc 'The instance to create the database on.'
   end
 
   newproperty(:name, parent: Google::Spanner::Property::String) do
     desc <<-DOC
-      A unique identifier for the instance, which cannot be changed after the
-      instance is created. Values are of the form
-      projects/<project>/instances/[a-z][-a-z0-9]*[a-z0-9]. The final segment
-      of the name must be between 6 and 30 characters in length.
+      A unique identifier for the instance, which cannot be changed after the instance is created.
+      Values are of the form projects/<project>/instances/[a-z][-a-z0-9]*[a-z0-9]. The final
+      segment of the name must be between 6 and 30 characters in length.
     DOC
   end
 
-  newproperty(:extra_statements,
-              parent: Google::Spanner::Property::StringArray) do
+  newproperty(:extra_statements, parent: Google::Spanner::Property::StringArray) do
     desc <<-DOC
-      An optional list of DDL statements to run inside the newly created
-      database. Statements can create tables, indexes, etc. These statements
-      execute atomically with the creation of the database: if there is an
-      error in any statement, the database is not created.
+      An optional list of DDL statements to run inside the newly created database. Statements can
+      create tables, indexes, etc. These statements execute atomically with the creation of the
+      database: if there is an error in any statement, the database is not created.
     DOC
   end
 end
