@@ -133,6 +133,7 @@ Puppet::Type.type(:gspanner_database).provide(:google) do
     }.reject { |_, v| v.nil? }
 
     request[:create_statement] = "CREATE DATABASE `#{name}`"
+    request.delete(:name)
 
     debug "request: #{request}" unless ENV['PUPPET_HTTP_DEBUG'].nil?
     request.to_json

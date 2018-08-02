@@ -59,7 +59,7 @@ required gems.
 
 ```puppet
 gspanner_instance_config { 'regional-us-central1':
-  project    => 'google.com:graphite-playground',
+  project    => $project, # e.g. 'my-test-project'
   credential => 'mycred',
 }
 
@@ -77,7 +77,7 @@ gspanner_instance { 'my-spanner':
     },
   ],
   config       => 'regional-us-central1',
-  project      => 'google.com:graphite-playground',
+  project      => $project, # e.g. 'my-test-project'
   credential   => 'mycred',
 }
 
@@ -95,7 +95,7 @@ gspanner_database { 'webstore':
      ) PRIMARY KEY (customer_id)',
   ],
   instance         => 'my-spanner',
-  project          => 'google.com:graphite-playground',
+  project          => $project, # e.g. 'my-test-project'
   credential       => 'mycred',
 }
 
@@ -142,7 +142,7 @@ define the geographic placement of nodes and their replication.
 
 ```puppet
 gspanner_instance_config { 'regional-us-central1':
-  project    => 'google.com:graphite-playground',
+  project    => $project, # e.g. 'my-test-project'
   credential => 'mycred',
 }
 
@@ -188,7 +188,7 @@ gspanner_instance { 'my-spanner':
     },
   ],
   config       => 'regional-us-central1',
-  project      => 'google.com:graphite-playground',
+  project      => $project, # e.g. 'my-test-project'
   credential   => 'mycred',
 }
 
@@ -217,7 +217,7 @@ gspanner_instance { 'id-of-resource':
 
 ##### `config`
 
-  A reference to InstanceConfig resource
+  A reference to the instance configuration.
 
 ##### `display_name`
 
@@ -270,7 +270,7 @@ gspanner_database { 'webstore':
      ) PRIMARY KEY (customer_id)',
   ],
   instance         => 'my-spanner',
-  project          => 'google.com:graphite-playground',
+  project          => $project, # e.g. 'my-test-project'
   credential       => 'mycred',
 }
 
@@ -307,7 +307,7 @@ gspanner_database { 'id-of-resource':
 
 ##### `instance`
 
-Required.  A reference to Instance resource
+Required.  The instance to create the database on.
 
 
 
