@@ -63,7 +63,7 @@ Puppet::Type.newtype(:gspanner_database) do
     desc 'The name of the Database.'
   end
 
-  newparam(:instance, parent: Google::Spanner::Property::InstancNameRef) do
+  newparam(:instance, parent: Google::Spanner::Property::InstanceNameRef) do
     desc 'The instance to create the database on.'
   end
 

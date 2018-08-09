@@ -67,7 +67,7 @@ Puppet::Type.newtype(:gspanner_instance) do
     DOC
   end
 
-  newproperty(:config, parent: Google::Spanner::Property::InstaConfiNameRef) do
+  newproperty(:config, parent: Google::Spanner::Property::InstanceConfigNameRef) do
     desc 'A reference to the instance configuration.'
   end
 

@@ -69,7 +69,7 @@ Puppet::Type.type(:gspanner_instance).provide(:google) do
   def self.fetch_to_hash(fetch)
     {
       name: Google::Spanner::Property::String.api_munge(fetch['name']),
-      config: Google::Spanner::Property::InstaConfiNameRef.api_munge(fetch['config']),
+      config: Google::Spanner::Property::InstanceConfigNameRef.api_munge(fetch['config']),
       display_name: Google::Spanner::Property::String.api_munge(fetch['displayName']),
       node_count: Google::Spanner::Property::Integer.api_munge(fetch['nodeCount']),
       labels: Google::Spanner::Property::NameValues.api_munge(fetch['labels'])

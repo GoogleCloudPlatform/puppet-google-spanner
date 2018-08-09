@@ -33,11 +33,11 @@ module Google
     module Data
       # Base class for ResourceRefs
       # Imports name from instance_config
-      class InstaConfiNameRef
+      class InstanceConfigNameRef
         include Comparable
 
         def ==(other)
-          return false unless other.is_a? InstaConfiNameRef
+          return false unless other.is_a? InstanceConfigNameRef
           return false if resource != other.resource
           true
         end
@@ -49,7 +49,7 @@ module Google
 
       # A class to fetch the resource value from a referenced block
       # Will return the value exported from a different Puppet resource
-      class InstaConfiNameRefCatalog < InstaConfiNameRef
+      class InstanceConfigNameRefCatalog < InstanceConfigNameRef
         def initialize(title)
           @title = title
         end
@@ -78,7 +78,7 @@ module Google
 
       # A class to manage a JSON blob from GCP API
       # Will immediately return value from JSON blob without changes
-      class InstaConfiNameRefApi < InstaConfiNameRef
+      class InstanceConfigNameRefApi < InstanceConfigNameRef
         attr_reader :resource
 
         def initialize(resource)
@@ -97,7 +97,7 @@ module Google
 
     module Property
       # A class to manage fetching name from a instance_config
-      class InstaConfiNameRef < Puppet::Property
+      class InstanceConfigNameRef < Puppet::Property
         # Used for catalog values
         def unsafe_munge(value)
           self.class.unsafe_munge(value)
@@ -105,13 +105,13 @@ module Google
 
         def self.unsafe_munge(value)
           return if value.nil?
-          Data::InstaConfiNameRefCatalog.new(value)
+          Data::InstanceConfigNameRefCatalog.new(value)
         end
 
         # Used for fetched JSON values
         def self.api_munge(value)
           return if value.nil?
-          Data::InstaConfiNameRefApi.new(value)
+          Data::InstanceConfigNameRefApi.new(value)
         end
       end
     end
