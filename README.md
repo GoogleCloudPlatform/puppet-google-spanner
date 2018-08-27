@@ -293,7 +293,7 @@ gspanner_database { 'id-of-resource':
 
 ##### `name`
 
-  A unique identifier for the instance, which cannot be changed after
+  A unique identifier for the database, which cannot be changed after
   the instance is created. Values are of the form
   projects/<project>/instances/[a-z][-a-z0-9]*[a-z0-9]. The final
   segment of the name must be between 6 and 30 characters in length.
