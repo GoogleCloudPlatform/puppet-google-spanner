@@ -94,8 +94,7 @@ Puppet::Type.type(:gspanner_instance_config).provide(:google) do
 
   def exports
     {
-      name: @fetched['name'],
-      project: resource[:project]
+      name: @fetched['name']
     }
   end
 
