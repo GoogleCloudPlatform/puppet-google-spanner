@@ -107,7 +107,7 @@ puppet-codegen:
   * lib/google/spanner/property/instance_name.rb
   * lib/google/spanner/property/instanceconfig_name.rb
   * lib/google/spanner/property/integer.rb
-  * lib/google/spanner/property/namevalues.rb
+  * lib/google/spanner/property/keyvaluepairs.rb
   * lib/google/spanner/property/string.rb
   * lib/google/spanner/property/string_array.rb
   * lib/puppet/provider/gspanner_database/google.rb

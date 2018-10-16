@@ -28,7 +28,7 @@
 require 'google/object_store'
 require 'google/spanner/property/instanceconfig_name'
 require 'google/spanner/property/integer'
-require 'google/spanner/property/namevalues'
+require 'google/spanner/property/keyvaluepairs'
 require 'google/spanner/property/string'
 require 'puppet'
 
@@ -82,7 +82,7 @@ Puppet::Type.newtype(:gspanner_instance) do
     desc 'The number of nodes allocated to this instance.'
   end
 
-  newproperty(:labels, parent: Google::Spanner::Property::NameValues) do
+  newproperty(:labels, parent: Google::Spanner::Property::KeyValuePairs) do
     desc <<-DOC
       Cloud Labels are a flexible and lightweight mechanism for organizing cloud resources into
       groups that reflect a customer's organizational needs and deployment strategies. Cloud Labels

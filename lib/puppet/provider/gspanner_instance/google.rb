@@ -34,7 +34,7 @@ require 'google/spanner/network/post'
 require 'google/spanner/network/put'
 require 'google/spanner/property/instanceconfig_name'
 require 'google/spanner/property/integer'
-require 'google/spanner/property/namevalues'
+require 'google/spanner/property/keyvaluepairs'
 require 'google/spanner/property/string'
 require 'puppet'
 
@@ -72,7 +72,7 @@ Puppet::Type.type(:gspanner_instance).provide(:google) do
       config: Google::Spanner::Property::InstanceConfigNameRef.api_munge(fetch['config']),
       display_name: Google::Spanner::Property::String.api_munge(fetch['displayName']),
       node_count: Google::Spanner::Property::Integer.api_munge(fetch['nodeCount']),
-      labels: Google::Spanner::Property::NameValues.api_munge(fetch['labels'])
+      labels: Google::Spanner::Property::KeyValuePairs.api_munge(fetch['labels'])
     }.reject { |_, v| v.nil? }
   end
 

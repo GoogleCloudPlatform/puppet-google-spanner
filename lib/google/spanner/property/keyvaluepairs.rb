@@ -31,7 +31,7 @@ module Google
   module Spanner
     module Property
       # A Puppet property that holds a string
-      class NameValues < Google::Spanner::Property::Base
+      class KeyValuePairs < Google::Spanner::Property::Base
         def self.api_munge(value)
           return if value.nil?
           value

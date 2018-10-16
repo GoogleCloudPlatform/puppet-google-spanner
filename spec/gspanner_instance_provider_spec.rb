@@ -137,7 +137,7 @@ describe Puppet::Type.type(:gspanner_instance).provider(:google) do
               # end
               it { is_expected.to have_attributes(display_name: 'test display_name#0 data') }
               it { is_expected.to have_attributes(node_count: 2_502_187_088) }
-              # TODO(nelsonjr): Implement complex namevalues property test.
+              # TODO(alexstephen): Implement keyvaluepairs test.
               # it 'labels' do
               #   # Add test code here
               # end
@@ -155,7 +155,7 @@ describe Puppet::Type.type(:gspanner_instance).provider(:google) do
               # end
               it { is_expected.to have_attributes(display_name: 'test display_name#1 data') }
               it { is_expected.to have_attributes(node_count: 5_004_374_177) }
-              # TODO(nelsonjr): Implement complex namevalues property test.
+              # TODO(alexstephen): Implement keyvaluepairs test.
               # it 'labels' do
               #   # Add test code here
               # end
@@ -173,7 +173,7 @@ describe Puppet::Type.type(:gspanner_instance).provider(:google) do
               # end
               it { is_expected.to have_attributes(display_name: 'test display_name#2 data') }
               it { is_expected.to have_attributes(node_count: 7_506_561_265) }
-              # TODO(nelsonjr): Implement complex namevalues property test.
+              # TODO(alexstephen): Implement keyvaluepairs test.
               # it 'labels' do
               #   # Add test code here
               # end
@@ -285,7 +285,7 @@ describe Puppet::Type.type(:gspanner_instance).provider(:google) do
               # end
               it { is_expected.to have_attributes(display_name: 'test display_name#0 data') }
               it { is_expected.to have_attributes(node_count: 2_502_187_088) }
-              # TODO(nelsonjr): Implement complex namevalues property test.
+              # TODO(alexstephen): Implement keyvaluepairs test.
               # it 'labels' do
               #   # Add test code here
               # end
@@ -303,7 +303,7 @@ describe Puppet::Type.type(:gspanner_instance).provider(:google) do
               # end
               it { is_expected.to have_attributes(display_name: 'test display_name#1 data') }
               it { is_expected.to have_attributes(node_count: 5_004_374_177) }
-              # TODO(nelsonjr): Implement complex namevalues property test.
+              # TODO(alexstephen): Implement keyvaluepairs test.
               # it 'labels' do
               #   # Add test code here
               # end
@@ -321,7 +321,7 @@ describe Puppet::Type.type(:gspanner_instance).provider(:google) do
               # end
               it { is_expected.to have_attributes(display_name: 'test display_name#2 data') }
               it { is_expected.to have_attributes(node_count: 7_506_561_265) }
-              # TODO(nelsonjr): Implement complex namevalues property test.
+              # TODO(alexstephen): Implement keyvaluepairs test.
               # it 'labels' do
               #   # Add test code here
               # end
